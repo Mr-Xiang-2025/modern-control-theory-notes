@@ -116,7 +116,7 @@ u\in L^2([t_0,t_f];\mathbb R^p),\qquad
 于是，当 $`x_0`$ 遍历全部状态空间时，$`-\Phi(t_f,t_0)x_0`$ 也遍历全部状态空间。因此，“能把任意初值送到零”“由零能到达任意终点”“能完成任意 $`x_0\to x_f`$”都等价于
 
 ```math
-\operatorname{im}\mathcal L=\mathbb R^n.
+\mathrm{im}\,\mathcal L=\mathbb R^n.
 ```
 
 **课件校正（第 11–12 页）**：课件称连续定常系统的能控与能达等价，并称线性时变系统一般不等价。按本页所使用的同一有限区间、连续线性、无约束输入定义，时变系统也等价。若改为比较不同的过去/未来区间，或讨论转移矩阵可能奇异的离散系统，则要重新核对定义，不能混用结论。
@@ -293,7 +293,7 @@ Q_c=[\,B\quad AB\quad A^2B\quad\cdots\quad A^{n-1}B\,]
 ```math
 (A,B)\text{ 完全能控}
 \quad\Longleftrightarrow\quad
-\operatorname{rank}Q_c=n.
+\mathrm{rank}\,Q_c=n.
 ```
 
 **为什么只检查到 $`A^{n-1}B`$？** 根据第二章的 Cayley–Hamilton 定理，$`A^n`$ 是 $`I,A,\ldots,A^{n-1}`$ 的线性组合，因此更高次的 $`A^kB`$ 不会增加新的状态方向。另一方面，矩阵指数的展开
@@ -307,8 +307,8 @@ e^{-A\sigma}B
 
 ```math
 \mathcal R
-=\operatorname{span}\{B,AB,\ldots,A^{n-1}B\}
-=\operatorname{im}Q_c.
+=\mathrm{span}\,\{B,AB,\ldots,A^{n-1}B\}
+=\mathrm{im}\,Q_c.
 ```
 
 更严格地，Gramian 奇异等价于存在 $`z\ne0`$，满足 $`z^Te^{-A\sigma}B=0`$ 对整个区间成立。对 $`\sigma`$ 求导并在 $`0`$ 处取值，得到
@@ -322,7 +322,7 @@ z^TB=z^TAB=\cdots=z^TA^{n-1}B=0.
 **实际计算**不一定要乘完 $`A^{n-1}B`$。逐块加入列，只要找到 $`n`$ 个线性无关列，即可停止并判定完全能控。若某步出现
 
 ```math
-\operatorname{rank}Q_{k+1}=\operatorname{rank}Q_k,
+\mathrm{rank}\,Q_{k+1}=\mathrm{rank}\,Q_k,
 ```
 
 其中 $`Q_k=[B,AB,\ldots,A^{k-1}B]`$，则当前列空间已经对 $`A`$ 不变，以后再加入高次列也不会增加秩。这比盲目计算全部矩阵更有效。
@@ -331,22 +331,22 @@ z^TB=z^TAB=\cdots=z^TA^{n-1}B=0.
 
 该页虽没有可抽取的正文标题，实图含有重要推论。设 $`n=3`$、$`p=2`$。
 
-如果 $`\operatorname{rank}B=2`$，则
+如果 $`\mathrm{rank}\,B=2`$，则
 
 ```math
 (A,B)\text{ 完全能控}
 \quad\Longleftrightarrow\quad
-\operatorname{rank}[B\quad AB]=3.
+\mathrm{rank}\,[B\quad AB]=3.
 ```
 
 原因是第一块已有两个独立方向；若乘一次 $`A`$ 仍不增加秩，这个二维空间就已经不变，$`A^2B`$ 也无法补齐第三个方向。
 
-如果 $`\operatorname{rank}B=1`$，取其任意非零列 $`b`$，所有输入方向等价于这一个方向，故
+如果 $`\mathrm{rank}\,B=1`$，取其任意非零列 $`b`$，所有输入方向等价于这一个方向，故
 
 ```math
 (A,B)\text{ 完全能控}
 \quad\Longleftrightarrow\quad
-\operatorname{rank}[b\quad Ab\quad A^2b]=3.
+\mathrm{rank}\,[b\quad Ab\quad A^2b]=3.
 ```
 
 若 $`B=0`$，则没有输入作用，非零维系统显然不完全能控。
@@ -358,7 +358,7 @@ z^TB=z^TAB=\cdots=z^TA^{n-1}B=0.
 ```math
 (A,B)\text{ 完全能控}
 \quad\Longleftrightarrow\quad
-\operatorname{rank}[\lambda I-A\quad B]=n,
+\mathrm{rank}\,[\lambda I-A\quad B]=n,
 \qquad \forall\lambda\in\sigma(A).
 ```
 
@@ -383,7 +383,7 @@ z^TA=\lambda z^T,\qquad z^TB=0.
 课件定义：若某个特征值 $`\lambda_0`$ 满足
 
 ```math
-\operatorname{rank}[\lambda_0I-A\quad B]<n,
+\mathrm{rank}\,[\lambda_0I-A\quad B]< n,
 ```
 
 则称 $`\lambda_0`$ 为**输入解耦零点**。它代表存在与输入解耦的不可控模态。“系统的极点”在这里应理解为状态矩阵的内部特征值；在非最小实现中，它不一定是传递函数的可见极点。
@@ -409,7 +409,7 @@ z^TA=\lambda z^T,\qquad z^TB=0.
 **结论 3.4：两两互异的特征值。** 当
 
 ```math
-\bar A=\operatorname{diag}(\lambda_1,\ldots,\lambda_n),
+\bar A=\mathrm{diag}\,(\lambda_1,\ldots,\lambda_n),
 \qquad \lambda_i\ne\lambda_j\ (i\ne j),
 ```
 
@@ -418,7 +418,7 @@ z^TA=\lambda z^T,\qquad z^TB=0.
 **结论 3.5：存在重特征值。** 对特征值 $`\lambda_i`$，设它对应 $`\alpha_i`$ 个约当块
 
 ```math
-J_i=\operatorname{diag}(J_{i1},\ldots,J_{i\alpha_i}),
+J_i=\mathrm{diag}\,(J_{i1},\ldots,J_{i\alpha_i}),
 ```
 
 其中 $`\alpha_i`$ 是几何重数，所有块阶数之和是该特征值的代数重数。将 $`\bar B`$ 按这些块分组，取每个块所对应输入子矩阵的**末行** $`\beta_{ij}`$，构成
@@ -437,7 +437,7 @@ R_i=
 系统完全能控，当且仅当
 
 ```math
-\operatorname{rank}R_i=\alpha_i,
+\mathrm{rank}\,R_i=\alpha_i,
 \qquad \text{对每个不同特征值 }\lambda_i\text{ 都成立}.
 ```
 
@@ -458,7 +458,7 @@ p\ge\alpha_i,
 
 ```math
 Q_k=[B\quad AB\quad\cdots\quad A^{k-1}B],
-\qquad d_k=\operatorname{rank}Q_k,
+\qquad d_k=\mathrm{rank}\,Q_k,
 \qquad d_0=0.
 ```
 
@@ -468,21 +468,21 @@ Q_k=[B\quad AB\quad\cdots\quad A^{k-1}B],
 \mu=\min\{k\ge1:d_k=n\}.
 ```
 
-它是输入方向经动力学传播后，第一次张成整个状态空间所需的矩阵块层数。若 $`\operatorname{rank}B=r>0`$，则
+它是输入方向经动力学传播后，第一次张成整个状态空间所需的矩阵块层数。若 $`\mathrm{rank}\,B=r>0`$，则
 
 ```math
 \left\lceil\frac{n}{r}\right\rceil
 \le\mu\le n-r+1.
 ```
 
-课件写的下界 $`n/p\le\mu`$ 仍然成立；当 $`r<p`$ 时，用有效独立输入数 $`r`$ 可以得到更强下界。下界来自 $`\operatorname{rank}Q_k\le kr`$；上界来自第一层已经有 $`r`$ 个独立方向，以后只要尚未满秩，每层至少增加一个方向。若哪一层完全不增加，列空间就已经对 $`A`$ 不变，系统不可能继续增至 $`n`$。
+课件写的下界 $`n/p\le\mu`$ 仍然成立；当 $`r< p`$ 时，用有效独立输入数 $`r`$ 可以得到更强下界。下界来自 $`\mathrm{rank}\,Q_k\le kr`$；上界来自第一层已经有 $`r`$ 个独立方向，以后只要尚未满秩，每层至少增加一个方向。若哪一层完全不增加，列空间就已经对 $`A`$ 不变，系统不可能继续增至 $`n`$。
 
 因此，课件第 26 页的简化判据为
 
 ```math
 (A,B)\text{ 完全能控}
 \quad\Longleftrightarrow\quad
-\operatorname{rank}[B\quad AB\quad\cdots\quad A^{n-r}B]=n.
+\mathrm{rank}\,[B\quad AB\quad\cdots\quad A^{n-r}B]=n.
 ```
 
 对完全能控的单输入系统，$`r=1`$，每层至多增加一个方向，所以 $`\mu=n`$。若 $`B`$ 满行秩，则 $`\mu=1`$。
@@ -581,7 +581,7 @@ CA^{n-1}
 ```math
 (A,C)\text{ 完全能观测}
 \quad\Longleftrightarrow\quad
-\operatorname{rank}Q_o=n.
+\mathrm{rank}\,Q_o=n.
 ```
 
 公式来源可由零输入输出连续求导看出：
@@ -615,21 +615,21 @@ y\\ \dot y\\ \vdots\\ y^{(n-1)}
 
 设 $`n=3`$、输出有两个分量。课件文字写“对双输入三维系统”，但此页实际讨论 $`C`$ 的两行，正确对象是**双输出三维系统**。
 
-如果 $`\operatorname{rank}C=2`$，则
+如果 $`\mathrm{rank}\,C=2`$，则
 
 ```math
 (A,C)\text{ 完全能观测}
 \quad\Longleftrightarrow\quad
-\operatorname{rank}
+\mathrm{rank}\,
 \begin{bmatrix}C\\CA\end{bmatrix}=3.
 ```
 
-如果 $`\operatorname{rank}C=1`$，取任意非零行 $`c`$，则
+如果 $`\mathrm{rank}\,C=1`$，取任意非零行 $`c`$，则
 
 ```math
 (A,C)\text{ 完全能观测}
 \quad\Longleftrightarrow\quad
-\operatorname{rank}
+\mathrm{rank}\,
 \begin{bmatrix}c\\cA\\cA^2\end{bmatrix}=3.
 ```
 
@@ -642,7 +642,7 @@ y\\ \dot y\\ \vdots\\ y^{(n-1)}
 ```math
 (A,C)\text{ 完全能观测}
 \quad\Longleftrightarrow\quad
-\operatorname{rank}
+\mathrm{rank}\,
 \begin{bmatrix}\lambda I-A\\C\end{bmatrix}=n,
 \qquad \forall\lambda\in\sigma(A).
 ```
@@ -658,8 +658,8 @@ Av=\lambda v,\qquad Cv=0.
 课件定义：若特征值 $`\lambda_0`$ 满足
 
 ```math
-\operatorname{rank}
-\begin{bmatrix}\lambda_0I-A\\C\end{bmatrix}<n,
+\mathrm{rank}\,
+\begin{bmatrix}\lambda_0I-A\\C\end{bmatrix}< n,
 ```
 
 则它称为**输出解耦零点**。完全能观测等价于没有输出解耦零点。这里同样要区别内部特征值与传递函数中的可见极点。
@@ -683,17 +683,17 @@ C&D
 当某个有限复数 $`z`$ 使其秩低于**正常秩**时，$`z`$ 是有限不变零点：
 
 ```math
-\operatorname{rank}\mathcal P(z)
-<\operatorname{nrank}\mathcal P(s).
+\mathrm{rank}\,\mathcal P(z)
+<\mathrm{nrank}\,\mathcal P(s).
 ```
 
-这里 $`\operatorname{nrank}`$ 是对变量 $`s`$ 的一般取值所达到的最大秩，不能一律改写成 $`n+\min(p,m)`$；若传递矩阵正常秩不足，该固定阈值会误判。在通常满正常秩的情形，课件采用的阈值才可以使用。$`z`$ 不需要预先限定为 $`A`$ 的特征值。
+这里 $`\mathrm{nrank}\,`$ 是对变量 $`s`$ 的一般取值所达到的最大秩，不能一律改写成 $`n+\min(p,m)`$；若传递矩阵正常秩不足，该固定阈值会误判。在通常满正常秩的情形，课件采用的阈值才可以使用。$`z`$ 不需要预先限定为 $`A`$ 的特征值。
 
 当 $`zI-A`$ 可逆，通过块消元有
 
 ```math
-\operatorname{rank}\mathcal P(z)
-=n+\operatorname{rank}G(z),
+\mathrm{rank}\,\mathcal P(z)
+=n+\mathrm{rank}\,G(z),
 \qquad
 G(s)=C(sI-A)^{-1}B+D.
 ```
@@ -733,7 +733,7 @@ S_i=[\gamma_{i1}\quad\gamma_{i2}\quad\cdots\quad\gamma_{i\alpha_i}]
 完全能观测当且仅当
 
 ```math
-\operatorname{rank}S_i=\alpha_i,
+\mathrm{rank}\,S_i=\alpha_i,
 \qquad \text{对每个不同特征值 }\lambda_i\text{ 成立}.
 ```
 
@@ -751,12 +751,12 @@ S_i=[\gamma_{i1}\quad\gamma_{i2}\quad\cdots\quad\gamma_{i\alpha_i}]
 C\\CA\\\vdots\\CA^{k-1}
 \end{bmatrix},
 \qquad
-\nu=\min\{k\ge1:\operatorname{rank}\bar Q_k=n\}.
+\nu=\min\{k\ge1:\mathrm{rank}\,\bar Q_k=n\}.
 ```
 
 对完全能观测系统，$`\nu`$ 是**能观性指数**，也称能观测性指数。它描述输出连同前 $`\nu-1`$ 阶导数的理论信息第一次足够重构全部状态的层数。
 
-若 $`\operatorname{rank}C=s>0`$，则与能控性对偶：
+若 $`\mathrm{rank}\,C=s>0`$，则与能控性对偶：
 
 ```math
 \left\lceil\frac{n}{s}\right\rceil
@@ -766,7 +766,7 @@ C\\CA\\\vdots\\CA^{k-1}
 第 37 页以 $`C`$ 有 $`m`$ 个独立行，即 $`s=m`$ 为前提，写作 $`n/m\le\nu\le n-m+1`$；其引理中的“完全能控”应为“完全能观测”。对应简化判据为
 
 ```math
-\operatorname{rank}
+\mathrm{rank}\,
 \begin{bmatrix}
 C\\CA\\\vdots\\CA^{n-s}
 \end{bmatrix}=n.
@@ -786,10 +786,10 @@ C\\CA\\\vdots\\CA^{n-s}
 **课件校正（第 38 页）**：标准降阶观测器的常见阶数为
 
 ```math
-n-\operatorname{rank}C,
+n-\mathrm{rank}\,C,
 ```
 
-而不是 $`n-\nu`$。原因是 $`\operatorname{rank}C`$ 个独立状态组合已经由测量直接给出，其余组合才需动态估计；能观测性指数描述的是这些组合怎样通过动力学逐层出现。例如完全能观测的三阶 SISO 系统通常有 $`\nu=3`$，但 $`\operatorname{rank}C=1`$，标准降阶观测器为二阶，不能由 $`n-\nu=0`$ 推出零阶动态估计器。此例为概念核对，不是课件新增编号例题。
+而不是 $`n-\nu`$。原因是 $`\mathrm{rank}\,C`$ 个独立状态组合已经由测量直接给出，其余组合才需动态估计；能观测性指数描述的是这些组合怎样通过动力学逐层出现。例如完全能观测的三阶 SISO 系统通常有 $`\nu=3`$，但 $`\mathrm{rank}\,C=1`$，标准降阶观测器为二阶，不能由 $`n-\nu=0`$ 推出零阶动态估计器。此例为概念核对，不是课件新增编号例题。
 
 对完全能观测系统，误差矩阵 $`A-LC`$ 的极点可任意配置，指数不直接限制这种代数自由度。实际可达到的估计速度仍受噪声放大、模型误差、采样和数值条件影响。
 
@@ -827,7 +827,7 @@ M_{k+1}(t)=\dot M_k(t)-A(t)M_k(t),
 **结论 3.11（充分条件）**：若存在所考察区间内的 $`t_1>t_0`$，使
 
 ```math
-\operatorname{rank}
+\mathrm{rank}\,
 [M_0(t_1)\quad M_1(t_1)\quad\cdots\quad M_{n-1}(t_1)]=n,
 ```
 
@@ -876,7 +876,7 @@ N_{k+1}(t)=N_k(t)A(t)+\dot N_k(t),
 **结论 3.12（充分条件）**：若存在区间中的 $`t_1>t_0`$，使
 
 ```math
-\operatorname{rank}
+\mathrm{rank}\,
 \begin{bmatrix}
 N_0(t_1)\\
 N_1(t_1)\\
@@ -1124,7 +1124,7 @@ G(s)=\frac{cb}{s}+\frac{cAb}{s^2}+\frac{cA^2b}{s^3}+\cdots.
 
 ### 3.6.2 结论 3.17：能控性特征变换矩阵
 
-当 $`\operatorname{rank}[b,Ab,\ldots,A^{n-1}b]=n`$，构造
+当 $`\mathrm{rank}\,[b,Ab,\ldots,A^{n-1}b]=n`$，构造
 
 ```math
 \begin{aligned}
@@ -1185,7 +1185,7 @@ c_c=cP=[\beta_0,\beta_1,\ldots,\beta_{n-1}].
 
 ### 3.6.4 结论 3.19–3.20：SISO 能观测规范型
 
-若 $`\operatorname{rank}[c^T,(cA)^T,\ldots,(cA^{n-1})^T]^T=n`$，取行基
+若 $`\mathrm{rank}\,[c^T,(cA)^T,\ldots,(cA^{n-1})^T]^T=n`$，取行基
 
 ```math
 \begin{aligned}
@@ -1237,7 +1237,7 @@ A_o=QAQ^{-1}=A_c^T,
 
 ```math
 \mathcal V_i=
-\operatorname{span}\{b_1,\ldots,A^{\nu_1-1}b_1;\ \ldots;\ b_i,\ldots,A^{\nu_i-1}b_i\}.
+\mathrm{span}\,\{b_1,\ldots,A^{\nu_1-1}b_1;\ \ldots;\ b_i,\ldots,A^{\nu_i-1}b_i\}.
 ```
 
 第 $`i`$ 列首次相关时满足
@@ -1258,7 +1258,7 @@ A^{\nu_i}b_i\in\mathcal V_i.
 
 形成基。课件六维格栅示意保留 $`b_1,Ab_1,A^2b_1,b_2,Ab_2,b_3`$，所以搜索长度为 $`(3,2,1)`$；第 4 个输入未贡献新方向。该图是算法示意，没有给出具体 $`A,B`$，不能虚构其数值矩阵。
 
-**与 3.2 能控性指数的区别。** 这里的 $`\nu_i`$ 是指定输入次序下的列向搜索长度；一般不能直接认作由 $`\operatorname{rank}[B,AB,\ldots]`$ 增量定义的不变能控性指数组。后者应按幂次层扫描或由秩增量计算。补充反例：$`A=\operatorname{diag}(1,2)`$，$`B=\begin{bmatrix}1&1\\1&0\end{bmatrix}`$，$`B`$ 已满秩，所以能控性指数 $`\mu=1`$；课件顺序先搜索 $`b_1=(1,1)^T`$，$`Ab_1=(1,2)^T`$ 就已成基，得到搜索长度 $`(2,0)`$。因此不能用这里的 $`\max\nu_i`$ 替代 $`\mu`$。这也说明“输入有几条独立链”必须注明所采用的搜索和基选择。
+**与 3.2 能控性指数的区别。** 这里的 $`\nu_i`$ 是指定输入次序下的列向搜索长度；一般不能直接认作由 $`\mathrm{rank}\,[B,AB,\ldots]`$ 增量定义的不变能控性指数组。后者应按幂次层扫描或由秩增量计算。补充反例：$`A=\mathrm{diag}\,(1,2)`$，$`B=\begin{bmatrix}1&1\\1&0\end{bmatrix}`$，$`B`$ 已满秩，所以能控性指数 $`\mu=1`$；课件顺序先搜索 $`b_1=(1,1)^T`$，$`Ab_1=(1,2)^T`$ 就已成基，得到搜索长度 $`(2,0)`$。因此不能用这里的 $`\max\nu_i`$ 替代 $`\mu`$。这也说明“输入有几条独立链”必须注明所采用的搜索和基选择。
 
 ### 3.7.2 从搜索基构造旺纳姆基
 
@@ -1338,7 +1338,7 @@ A_i=
 
 ```math
 Ae_{i1}=-\alpha_{i0}b_i+
-\sum_{h<i}\sum_j\gamma_{i,h,j}e_{hj},
+\sum_{h=1}^{i-1}\sum_{j=1}^{\nu_h}\gamma_{i,h,j}e_{hj},
 \qquad
 Ae_{ij}=e_{i,j-1}-\alpha_{i,j-1}b_i\quad(j\ge2).
 ```
@@ -1374,11 +1374,11 @@ A_o=FAF^{-1}=(T_d^{-1}A^TT_d)^T,
 定义
 
 ```math
-\mathcal R=\operatorname{im}Q_c
-=\operatorname{span}\{B,AB,\ldots,A^{n-1}B\}.
+\mathcal R=\mathrm{im}\,Q_c
+=\mathrm{span}\,\{B,AB,\ldots,A^{n-1}B\}.
 ```
 
-对前 $`n-1`$ 个幂块，左乘 $`A`$ 只推进到下一块；对最后一个幂块，Cayley–Hamilton 定理把 $`A^nB`$ 写成此前幂块的线性组合。因此 $`A\mathcal R\subseteq\mathcal R`$。系统从零状态出发在输入作用下只能落在 $`\mathcal R`$，其维数 $`k=\operatorname{rank}Q_c`$ 是能达维数。
+对前 $`n-1`$ 个幂块，左乘 $`A`$ 只推进到下一块；对最后一个幂块，Cayley–Hamilton 定理把 $`A^nB`$ 写成此前幂块的线性组合。因此 $`A\mathcal R\subseteq\mathcal R`$。系统从零状态出发在输入作用下只能落在 $`\mathcal R`$，其维数 $`k=\mathrm{rank}\,Q_c`$ 是能达维数。
 
 ### 3.8.2 结论 3.23：按能控性的结构分解
 
@@ -1426,7 +1426,7 @@ $`A`$ 的左下块为零，源于能控子空间的 $`A`$ 不变性；$`B`$ 的�
 
 ### 3.8.4 结论 3.24：按能观测性的结构分解
 
-设 $`m_o=\operatorname{rank}Q_o<n`$，从 $`Q_o`$ 中取 $`m_o`$ 个独立行 $`h_1,\ldots,h_{m_o}`$，补足 $`n`$ 个独立行构成 $`F`$，用 $`z=Fx`$。
+设 $`m_o=\mathrm{rank}\,Q_o< n`$，从 $`Q_o`$ 中取 $`m_o`$ 个独立行 $`h_1,\ldots,h_{m_o}`$，补足 $`n`$ 个独立行构成 $`F`$，用 $`z=Fx`$。
 
 ```math
 FAF^{-1}=
@@ -1507,7 +1507,7 @@ G(s)=C(sI-A)^{-1}B
 
 **物理意义与边界：** 输入输出实验看不到没有输入到输出路径的内部动态。非零初始条件下，不可控但可观测部分仍可出现在自然响应中，所以不能说它们“对任何输出均无影响”。传递函数约简也不能证明原系统内部稳定，隐藏模态可能不稳定。
 
-能控能观测部分给出最小实现，最小阶数是 $`n_{co}`$，而不是简单取 $`\min(\operatorname{rank}Q_c,\operatorname{rank}Q_o)`$。第一章的传递函数与状态空间关系、第二章的自然/强迫响应、本章的结构分解在这里汇合。
+能控能观测部分给出最小实现，最小阶数是 $`n_{co}`$，而不是简单取 $`\min(\mathrm{rank}\,Q_c,\mathrm{rank}\,Q_o)`$。第一章的传递函数与状态空间关系、第二章的自然/强迫响应、本章的结构分解在这里汇合。
 
 ## 本章复习与计算路线
 
@@ -1535,8 +1535,8 @@ G(s)=C(sI-A)^{-1}B
 | 7–8 | 将完全能控/能观作为全部镇定、LQR、滤波设计的必要条件 | 区分任意极点配置、可稳定性、可检测性及相应设计假设 |
 | 10–13 | 能控/能达文字和零初/终态记号混用；不可观定义缺少非零初态与已知输入处理 | 统一量词、有限区间与零输入差系统 |
 | 11 | 连续时变能控与能达“一般不等价” | 同一有限区间的完全性质由可逆转移矩阵联系，二者等价 |
-| 19 | $`\operatorname{rank}B=2`$ 的参数条件不完整 | 仅 $`a=b=1/2`$ 为秩 1，其余均秩 2，见 E02 |
-| 25–27、37–38 | 将连续指数解释为最短时间、采样次数或观测器阶数 | 指数衡量代数层数；采样系统重新检验；标准降阶观测器阶数为 $`n-\operatorname{rank}C`$ |
+| 19 | $`\mathrm{rank}\,B=2`$ 的参数条件不完整 | 仅 $`a=b=1/2`$ 为秩 1，其余均秩 2，见 E02 |
+| 25–27、37–38 | 将连续指数解释为最短时间、采样次数或观测器阶数 | 指数衡量代数层数；采样系统重新检验；标准降阶观测器阶数为 $`n-\mathrm{rank}\,C`$ |
 | 26、59–68 | 不同搜索顺序的链长易混同 | 幂次层扫描给出不变指数组；输入链优先的旺纳姆搜索长度依顺序而定 |
 | 32、37 | “双输入”实际为双输出；观察指数引理误写“完全能控” | 分别改为双输出、完全能观测 |
 | 33 | 传输零点被限定为 $`A`$ 特征值且被称不可控/不可观模态 | 区分解耦零点、有限不变零点与传输零点；系统矩阵以正常秩为比较基准 |
@@ -1592,7 +1592,7 @@ Q_c=[B\;AB]=
 \det Q_c=-10-8=-18\ne0.
 ```
 
-因此 $`\operatorname{rank}Q_c=2=n`$，系统**完全能控**。
+因此 $`\mathrm{rank}\,Q_c=2=n`$，系统**完全能控**。
 
 **第三步：计算能观测性判别矩阵。**
 
@@ -1603,10 +1603,10 @@ Q_o=\begin{bmatrix}C\\CA\end{bmatrix}
 =\begin{bmatrix}0&-6\\0&30\end{bmatrix}.
 ```
 
-故 $`\operatorname{rank}Q_o=1<2`$，不可观子空间为
+故 $`\mathrm{rank}\,Q_o=1<2`$，不可观子空间为
 
 ```math
-\ker Q_o=\operatorname{span}\left\{\begin{bmatrix}1\\0\end{bmatrix}\right\}.
+\ker Q_o=\mathrm{span}\,\left\{\begin{bmatrix}1\\0\end{bmatrix}\right\}.
 ```
 
 零输入时，
@@ -1643,7 +1643,7 @@ A=\begin{bmatrix}-2&0\\0&-3\end{bmatrix},
 ```math
 CA=\begin{bmatrix}0&-3\end{bmatrix},\qquad
 Q_o=\begin{bmatrix}0&1\\0&-3\end{bmatrix},
-\qquad \operatorname{rank}Q_o=1<2.
+\qquad \mathrm{rank}\,Q_o=1<2.
 ```
 
 对已知输入，输出完整表达式为
@@ -1653,7 +1653,7 @@ y(t)=e^{-3(t-t_0)}x_2(t_0)
 +\int_{t_0}^{t}e^{-3(t-\tau)}u(\tau)\,d\tau.
 ```
 
-输出与 $`x_1(t_0)`$ 无关，因此 $`x_1`$ 不能由输出重构；系统**不完全能观测**，不可观子空间为 $`\operatorname{span}\{[1,0]^T\}`$。
+输出与 $`x_1(t_0)`$ 无关，因此 $`x_1`$ 不能由输出重构；系统**不完全能观测**，不可观子空间为 $`\mathrm{span}\,\{[1,0]^T\}`$。
 
 **补充检验能控性。** 虽然图的重点是能观测性，但这两个状态仍能被同一个输入独立驱动，因为其动态速率不同：
 
@@ -1727,15 +1727,15 @@ Q_c=[B\;AB\;A^2B]=
 =4+4=8\ne0.
 ```
 
-于是 $`\operatorname{rank}Q_c=3=n`$，系统**完全能控**。实际判断时，一旦找到这个非零子式就能停止，不必为满秩结论继续计算 $`A^2B`$；此处列出完整矩阵以便核算。又因 $`\operatorname{rank}B=2`$ 而 $`\operatorname{rank}[B\;AB]=3`$，其能控性指数为 $`\mu=2`$。
+于是 $`\mathrm{rank}\,Q_c=3=n`$，系统**完全能控**。实际判断时，一旦找到这个非零子式就能停止，不必为满秩结论继续计算 $`A^2B`$；此处列出完整矩阵以便核算。又因 $`\mathrm{rank}\,B=2`$ 而 $`\mathrm{rank}\,[B\;AB]=3`$，其能控性指数为 $`\mu=2`$。
 
 ### U03　三维双输入系统的快速判断（课件第18页，未编号推论演算）
 
 设 $`A\in\mathbb R^{3\times3}`$，$`B=[b_1\;b_2]\in\mathbb R^{3\times2}`$。
 
-**情形一：$`\operatorname{rank}B=2`$。** 若 $`\operatorname{rank}[B\;AB]=3`$，显然完整能控阵也满秩，系统完全能控。
+**情形一：$`\mathrm{rank}\,B=2`$。** 若 $`\mathrm{rank}\,[B\;AB]=3`$，显然完整能控阵也满秩，系统完全能控。
 
-若 $`\operatorname{rank}[B\;AB]=2`$，记 $`\mathcal V=\operatorname{im}B`$，则 $`AB`$ 每列都位于 $`\mathcal V`$，即
+若 $`\mathrm{rank}\,[B\;AB]=2`$，记 $`\mathcal V=\mathrm{im}\,B`$，则 $`AB`$ 每列都位于 $`\mathcal V`$，即
 
 ```math
 A\mathcal V\subseteq\mathcal V.
@@ -1745,14 +1745,14 @@ A\mathcal V\subseteq\mathcal V.
 
 ```math
 (A,B)\text{完全能控}
-\iff \operatorname{rank}[B\;AB]=3.
+\iff \mathrm{rank}\,[B\;AB]=3.
 ```
 
-**情形二：$`\operatorname{rank}B=1`$。** 在 $`B`$ 中选一个非零列 $`b`$，则两个输入列都只是 $`b`$ 的倍数，因此
+**情形二：$`\mathrm{rank}\,B=1`$。** 在 $`B`$ 中选一个非零列 $`b`$，则两个输入列都只是 $`b`$ 的倍数，因此
 
 ```math
-\operatorname{im}[B\;AB\;A^2B]
-=\operatorname{span}\{b,Ab,A^2b\}.
+\mathrm{im}\,[B\;AB\;A^2B]
+=\mathrm{span}\,\{b,Ab,A^2b\}.
 ```
 
 于是
@@ -1796,7 +1796,7 @@ b&1&-2b&-2&4b&4
 新列均为 $`B`$ 的已有列的倍数，故
 
 ```math
-\operatorname{rank}Q_c=\operatorname{rank}B\le2<3.
+\mathrm{rank}\,Q_c=\mathrm{rank}\,B\le2<3.
 ```
 
 这已证明：**无论 $`a,b`$ 如何取值，系统都不完全能控。**
@@ -1819,7 +1819,7 @@ b&1&-2b&-2&4b&4
 它们同时为0当且仅当 $`a=b=1/2`$。因此
 
 ```math
-\operatorname{rank}Q_c=
+\mathrm{rank}\,Q_c=
 \begin{cases}
 1,&a=b=\frac12,\\
 2,&(a,b)\ne(\frac12,\frac12).
@@ -1878,7 +1878,7 @@ B_{2,:}\\B_{3,:}\\B_{4,:}
 
 ```math
 \det R_2=1\cdot4\cdot7=28\ne0,
-\qquad \operatorname{rank}R_2=3.
+\qquad \mathrm{rank}\,R_2=3.
 ```
 
 这3个块的末端都能被输入独立作用。
@@ -1894,7 +1894,7 @@ R_3=
 
 ```math
 \det\begin{bmatrix}1&0\\0&1\end{bmatrix}=1\ne0,
-\qquad \operatorname{rank}R_3=2.
+\qquad \mathrm{rank}\,R_3=2.
 ```
 
 所有特征值组都满足“末行组成的判别矩阵行满秩”，因此系统**完全能控**。
@@ -1936,7 +1936,7 @@ R_{-2}=\begin{bmatrix}a&1\\2&4\\b&1\end{bmatrix}.
 它只有2列，故
 
 ```math
-\operatorname{rank}R_{-2}\le2<3=\alpha.
+\mathrm{rank}\,R_{-2}\le2<3=\alpha.
 ```
 
 所以**无论 $`a,b`$ 取何值，系统均不完全能控**。参数分类仍为：$`a=b=1/2`$ 时秩1，其余情况秩2。
@@ -2001,17 +2001,17 @@ Q_o=\begin{bmatrix}C\\CA\\CA^2\end{bmatrix}
 =-2(-3)+1(19-1)=6+18=24\ne0.
 ```
 
-于是 $`\operatorname{rank}Q_o=3=n`$，系统**完全能观测**。又因 $`\operatorname{rank}C=2`$、$`\operatorname{rank}[C^T\;(CA)^T]^T=3`$，能观测性指数为 $`\nu=2`$：扣除已知输入响应后，输出及其一阶导数已经包含确定三维状态所需的独立信息。
+于是 $`\mathrm{rank}\,Q_o=3=n`$，系统**完全能观测**。又因 $`\mathrm{rank}\,C=2`$、$`\mathrm{rank}\,[C^T\;(CA)^T]^T=3`$，能观测性指数为 $`\nu=2`$：扣除已知输入响应后，输出及其一阶导数已经包含确定三维状态所需的独立信息。
 
 ### U04　三维双输出系统的快速判断（课件第32页，未编号推论演算）
 
 设 $`A\in\mathbb R^{3\times3}`$，$`C\in\mathbb R^{2\times3}`$。
 
-**情形一：$`\operatorname{rank}C=2`$。**
+**情形一：$`\mathrm{rank}\,C=2`$。**
 
 ```math
 (A,C)\text{完全能观测}
-\iff \operatorname{rank}\begin{bmatrix}C\\CA\end{bmatrix}=3.
+\iff \mathrm{rank}\,\begin{bmatrix}C\\CA\end{bmatrix}=3.
 ```
 
 充分性显然；证明必要性时，若堆叠阵仍为秩2，则 $`CA`$ 的每一行都在 $`C`$ 的行空间中。故存在 $`L\in\mathbb R^{2\times2}`$ 使
@@ -2022,7 +2022,7 @@ CA=LC.
 
 进一步 $`CA^2=LCA=L^2C`$，不会增加独立行，最终观察阵不可能达到秩3。
 
-**情形二：$`\operatorname{rank}C=1`$。** 选择 $`C`$ 中任意非零行 $`c`$，其余行都是 $`c`$ 的倍数，于是
+**情形二：$`\mathrm{rank}\,C=1`$。** 选择 $`C`$ 中任意非零行 $`c`$，其余行都是 $`c`$ 的倍数，于是
 
 ```math
 (A,C)\text{完全能观测}
@@ -2068,7 +2068,7 @@ S_2=[C_{:,1}\;C_{:,3}\;C_{:,4}]
 ```
 
 ```math
-\det S_2=28\ne0,\qquad \operatorname{rank}S_2=3.
+\det S_2=28\ne0,\qquad \mathrm{rank}\,S_2=3.
 ```
 
 **第三步：对 $`\lambda=3`$，取状态索引5、7对应的首列。**
@@ -2082,7 +2082,7 @@ S_3=[C_{:,5}\;C_{:,7}]
 
 ```math
 \det\begin{bmatrix}1&0\\0&1\end{bmatrix}=1\ne0,
-\qquad\operatorname{rank}S_3=2.
+\qquad\mathrm{rank}\,S_3=2.
 ```
 
 各特征值组的首列判别矩阵均列满秩，因此系统**完全能观测**。
@@ -2172,7 +2172,7 @@ M_2(t)=\begin{bmatrix}
 =-1\ne0.
 ```
 
-所以 $`\operatorname{rank}\mathcal M(1)=3`$，满足充分条件，系统在 $`t_0=0.5`$ **完全能控**。
+所以 $`\mathrm{rank}\,\mathcal M(1)=3`$，满足充分条件，系统在 $`t_0=0.5`$ **完全能控**。
 
 作为整体核对，一般时刻的行列式为
 
@@ -2535,7 +2535,7 @@ A^2B=\begin{bmatrix}3&4\\1&0\\3&4\end{bmatrix}.
 Q_c=\begin{bmatrix}0&1&1&2&3&4\\1&0&1&0&1&0\\0&1&1&2&3&4\end{bmatrix}.
 ```
 
-第一、三行相等，故秩至多2；$`B`$ 的两列独立，故秩至少2。因此 $`\operatorname{rank}Q_c=2<3`$。另可直接看到 $`Ab_1=b_1+b_2`$、$`Ab_2=2b_2`$，说明 $`\operatorname{span}\{b_1,b_2\}`$ 在 $`A`$ 作用下封闭，以后各次幂不会新增方向。
+第一、三行相等，故秩至多2；$`B`$ 的两列独立，故秩至少2。因此 $`\mathrm{rank}\,Q_c=2<3`$。另可直接看到 $`Ab_1=b_1+b_2`$、$`Ab_2=2b_2`$，说明 $`\mathrm{span}\,\{b_1,b_2\}`$ 在 $`A`$ 作用下封闭，以后各次幂不会新增方向。
 
 **第二步：补足列基。** 按课件取
 
@@ -2616,7 +2616,7 @@ Q_o=\begin{bmatrix}C\\CA\\CA^2\end{bmatrix}
 \det\begin{bmatrix}0&1&0\\0&0&1\\-2&-4&-3\end{bmatrix}=-2\ne0.
 ```
 
-所以 $`\operatorname{rank}[C;CA]=\operatorname{rank}Q_o=3`$。本例能观测分状态为三维，不能观测子空间是 $`\{0\}`$；不存在课件声称的一维不能观测部分。
+所以 $`\mathrm{rank}\,[C;CA]=\mathrm{rank}\,Q_o=3`$。本例能观测分状态为三维，不能观测子空间是 $`\{0\}`$；不存在课件声称的一维不能观测部分。
 
 **也可从输出直接证明。** 设 $`y_1=x_2,y_2=x_3`$，则原方程第三行为
 
@@ -2640,7 +2640,7 @@ F^{-1}=\begin{bmatrix}0&0&1\\1&0&0\\0&1&0\end{bmatrix}.
 
 ```math
 F\begin{bmatrix}0&0&1\\-1&0&0\\0&-1&0\end{bmatrix}
-=\operatorname{diag}(-1,-1,1)\ne I.
+=\mathrm{diag}\,(-1,-1,1)\ne I.
 ```
 
 用正确的逆矩阵计算：
@@ -2683,7 +2683,7 @@ A^2B=\begin{bmatrix}-1\\-3\\-2\end{bmatrix}=-B-2AB,
 
 ```math
 Q_c=[B,AB,A^2B]=\begin{bmatrix}1&0&-1\\1&1&-3\\0&1&-2\end{bmatrix},
-\qquad \operatorname{rank}Q_c=2.
+\qquad \mathrm{rank}\,Q_c=2.
 ```
 
 取 $`q_1=B,q_2=AB,q_3=[0,0,1]^T`$，得到
@@ -2727,7 +2727,7 @@ L=\begin{bmatrix}-1\\-2\end{bmatrix}.
 
 ```math
 Q_{oc}=\begin{bmatrix}C_c\\C_cA_c\end{bmatrix}
-=\begin{bmatrix}1&-1\\-1&1\end{bmatrix},\qquad\operatorname{rank}Q_{oc}=1.
+=\begin{bmatrix}1&-1\\-1&1\end{bmatrix},\qquad\mathrm{rank}\,Q_{oc}=1.
 ```
 
 取第一行 $`[1,-1]`$ 并补行 $`[0,1]`$，令
@@ -2777,7 +2777,7 @@ y=\begin{bmatrix}1&0&-2\end{bmatrix}\tilde x.}
 CA=\begin{bmatrix}1&-2&3\end{bmatrix},\quad
 CA^2=\begin{bmatrix}-2&3&-4\end{bmatrix},\quad
 Q_o=\begin{bmatrix}0&1&-2\\1&-2&3\\-2&3&-4\end{bmatrix},\quad
-\operatorname{rank}Q_o=2.
+\mathrm{rank}\,Q_o=2.
 ```
 
 第三行是第一行的负1倍与第二行的负2倍之和，前两行独立，故秩确为2。零初始条件下 $`\tilde x_{\bar c o}(t)\equiv0`$，于是
@@ -2791,7 +2791,7 @@ Q_o=\begin{bmatrix}0&1&-2\\1&-2&3\\-2&3&-4\end{bmatrix},\quad
 
 ```math
 \det(sI-A)=(s+1)^3,\quad
-C\operatorname{adj}(sI-A)B=(s+1)^2,
+C\mathrm{adj}\,(sI-A)B=(s+1)^2,
 \quad G(s)=\frac{(s+1)^2}{(s+1)^3}=\frac1{s+1}.
 ```
 
